@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
+import {Task} from '../../models/task.model';
 
 export interface PeriodicElement {
   name: string;
@@ -21,6 +22,31 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
 
+const data:Task[]=[
+    {
+        contact_person: "Alice",
+        description: "Complete by next week",
+        due_date: "2025-06-15",
+        entity_name: "Project X",
+        id: 34,
+        status: "In Progress",
+        task_type: "Development",
+        title: "Finish project",
+        user_id: 1
+    },
+    {
+        "contact_person": "Alice",
+        "description": "Complete by next week",
+        "due_date": "2025-06-15",
+        "entity_name": "Project X",
+        "id": 35,
+        "status": "In Progress",
+        "task_type": "Development",
+        "title": "Finish project 2",
+        "user_id": 1
+    }
+]
+
 /**
  * @title Basic use of `<table mat-table>`
  */
@@ -31,6 +57,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   imports: [MatTableModule]
 })
 export class TasklistComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['contact_person', 'description', 'due_date', 'entity_name', 'id', 'status', 'task_type', 'title', 'user_id'];
+  dataSource = data;
 }
