@@ -1,0 +1,80 @@
+<h2 mat-dialog-title class="form-title">
+  {{ data.mode === 'create' ? 'Create Task' : 'Update Task' }}
+</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="form-container">
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" />
+        <mat-error *ngIf="taskForm.get('title')?.hasError('required')">Title is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Task Type</mat-label>
+        <input matInput formControlName="task_type" />
+        <mat-error *ngIf="taskForm.get('task_type')?.hasError('required')">Task type is required</mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Entity Name</mat-label>
+        <input matInput formControlName="entity_name" />
+        <mat-error *ngIf="taskForm.get('entity_name')?.hasError('required')">Task type is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Contact Person</mat-label>
+        <input matInput formControlName="contact_person" />
+        <mat-error *ngIf="taskForm.get('contact_person')?.hasError('required')">Contact person is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Due Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="due_date" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="taskForm.get('due_date')?.hasError('required')">Due date is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" rows="4"></textarea>
+        <mat-error *ngIf="taskForm.get('description')?.hasError('required')">Description is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="Pending">Pending</mat-option>
+          <mat-option value="In Progress">In Progress</mat-option>
+          <mat-option value="Completed">Completed</mat-option>
+        </mat-select>
+        <mat-error *ngIf="taskForm.get('status')?.hasError('required')">Status is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="taskForm.invalid">
+        {{ data.mode === 'create' ? 'Create' : 'Update' }}
+      </button>
+      <button mat-button type="button" (click)="dialogRef.close()">Cancel</button>
+    </div>
+
+  </form>
+</mat-dialog-content>

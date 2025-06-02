@@ -8,7 +8,7 @@
 }
 
 .table-wrapper {
-  max-height: 90%;
+  max-height: 75vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -49,4 +49,23 @@ th {
   top: 0;
   background-color: #cceedd;
   z-index: 2;
+}
+
+.actions-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-row:hover .actions-cell {
+  opacity: 1;
+}
+
+mat-icon {
+  color: #333;
+}
+
+mat-icon:hover {
+  color: #007b5e;
 }

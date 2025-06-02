@@ -4,10 +4,5 @@
   </button>
   <span>Task Manager</span>
   <span class="example-spacer"></span>
-  <button matIconButton class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button matIconButton class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
+  <button mat-button color="primary" (click)="openCreateTaskDialog()">Create New Task</button>
 </mat-toolbar>

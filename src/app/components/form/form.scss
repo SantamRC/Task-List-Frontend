@@ -1,0 +1,39 @@
+.form-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0.5rem 0;
+}
+
+.form-row {
+  width: 100%;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+mat-dialog-content{
+    background-color: rgb(255, 255, 255);
+}
+
+mat-label {
+    color: rgb(0, 0, 0);
+}
+
+mat-hint{ color:black;}
