@@ -11,46 +11,6 @@ import { TaskModel } from '../../models/task.model';
 import { TasklistService } from '../../service/tasklist';
 import { TaskFormComponent } from '../form/form'
 
-export interface UserData {
-  id: string;
-  name: string;
-  progress: string;
-  fruit: string;
-}
-
-/** Constants used to fill up our data base. */
-const FRUITS: string[] = [
-  'blueberry',
-  'lychee',
-  'kiwi',
-  'mango',
-  'peach',
-  'lime',
-  'pomegranate',
-  'pineapple',
-];
-const NAMES: string[] = [
-  'Maia',
-  'Asher',
-  'Olivia',
-  'Atticus',
-  'Amelia',
-  'Jack',
-  'Charlotte',
-  'Theodore',
-  'Isla',
-  'Oliver',
-  'Isabella',
-  'Jasper',
-  'Cora',
-  'Levi',
-  'Violet',
-  'Arthur',
-  'Mia',
-  'Thomas',
-  'Elizabeth',
-];
-
 /**
  * @title Data table with sorting, pagination, and filtering.
  */
@@ -70,13 +30,7 @@ export class FilteredTaskListComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private tasklistService: TasklistService,private dialog: MatDialog,private snackBar: MatSnackBar) {
-    // Create 100 users
-    // const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
-
-    // // Assign the data to the data source for the table to render
-    // this.dataSource = new MatTableDataSource(users);
-  }
+  constructor(private tasklistService: TasklistService,private dialog: MatDialog,private snackBar: MatSnackBar) {  }
 
   ngOnInit() {
     this.tasklistService.getTasks().subscribe((tasks: TaskModel[]) => {
@@ -129,20 +83,4 @@ export class FilteredTaskListComponent implements AfterViewInit {
       });
     });
   }
-}
-
-/** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-  const name =
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
-    ' ' +
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
-    '.';
-
-  return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
-  };
 }

@@ -83,3 +83,28 @@ mat-icon {
 mat-icon:hover {
   color: #007b5e;
 }
+
+.mat-column-title,
+.mat-column-task_type,
+.mat-column-entity_name,
+.mat-column-contact_person,
+.mat-column-due_date,
+.mat-column-status{
+  width: 12%; // You can adjust this slightly if needed
+}
+
+// Make the description column wider
+.mat-column-description {
+  width: 30%; // More space for description
+}
+
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+mat-form-field {
+  width: 40vw; // 40% of the viewport width
+}
