@@ -1,0 +1,85 @@
+// table {
+//   width: 100%;
+// }
+
+// .mat-mdc-form-field {
+//   font-size: 14px;
+//   width: 100%;
+// }
+
+// td, th {
+//   width: 25%;
+// }
+
+
+.container {
+  width: 95%;
+  margin: 2rem auto;
+  background-color: #e6f4ea; // light green background
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-wrapper {
+  max-height: 75vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #e6f4ea;
+  color: black; // make text black
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  color: black;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal; // allow wrapping
+}
+
+td.description-cell {
+  max-width: 250px;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+tr:nth-child(even) {
+  background-color: #d3ecd9; // slightly different green for striped rows
+}
+
+tr:hover {
+  background-color: #c3e6cd;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background-color: #cceedd;
+  z-index: 2;
+}
+
+.actions-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-row:hover .actions-cell {
+  opacity: 1;
+}
+
+mat-icon {
+  color: #333;
+}
+
+mat-icon:hover {
+  color: #007b5e;
+}
